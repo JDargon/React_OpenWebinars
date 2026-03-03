@@ -1,12 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import ButtonComponent from './components/ButtonComponent'
+import HeaderComponnet from './components/HeaderComponent'
 
 function App() {
   return (
     <>
-    <h1>Hola a todos !</h1>
+      <HeaderComponnet />
+
+      <main className='main-content'>
+        <h1>Hola a todos !</h1>
+        <ButtonComponent />
+      </main>
+
     </>
   )
 }
