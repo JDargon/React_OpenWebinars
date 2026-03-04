@@ -8,6 +8,7 @@ function App() {
   //let number = 0;
 
   const [number, setNumber] = useState(0);
+  const [myValue, setMyValue] = useState("");
   let myPlaceholder = "Escribe aquí";
 
   const sayHello = () => {
@@ -15,7 +16,8 @@ function App() {
   }
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
+    setMyValue(e.target.value)
   }
 
   const addOne = () => {
@@ -31,7 +33,7 @@ function App() {
       <main className='main-content'>
         <h2 onClick={sayHello}>Hola a todos !</h2>
         <h2 onClick={addOne}>Number: {number}</h2>
-        <input type='text' placeholder={myPlaceholder} onChange={handleChange} />
+        <input value={myValue} type='text' placeholder={myPlaceholder} onChange={handleChange} />
 
         <br />
         <br />
