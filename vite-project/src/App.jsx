@@ -3,15 +3,14 @@ import './App.css'
 import ButtonComponent from './components/ButtonComponent'
 import HeaderComponnet from './components/HeaderComponent'
 import Login from './components/Login';
+import MovieList from './components/MovieList';
 
 function App() {
 
   const [number, setNumber] = useState(0);
   const [myValue, setMyValue] = useState("");
   const [greetings, setGreetings] = useState("BienVenidos a mi web!")
-
   const [user, setUser] = useState({})
-
   let myPlaceholder = "Escribe aquí"
 
   const links = {
@@ -45,9 +44,9 @@ function App() {
 
       <main className='main-content' >
 
-        { user.username && <h2 onClick={sayHello}>Hola {user.username}</h2> }
+        {user.username && <h2 onClick={sayHello}>Hola {user.username}</h2>}
 
-        <Login handleLogin={login}/>
+        <Login handleLogin={login} />
 
         <h2 onClick={addOne}>Number: {number}</h2>
         <input value={myValue} type='text' placeholder={myPlaceholder} onChange={handleChange} />
@@ -55,6 +54,9 @@ function App() {
         <br />
         <br />
         <ButtonComponent />
+
+        <MovieList/>
+
       </main>
 
     </>
