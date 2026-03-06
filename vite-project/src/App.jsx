@@ -4,6 +4,7 @@ import ButtonComponent from './components/ButtonComponent'
 import HeaderComponnet from './components/HeaderComponent'
 import Login from './components/Login';
 import MovieList from './components/MovieList';
+import AnimalList from './components/AnimalList';
 
 function App() {
 
@@ -56,6 +57,8 @@ function App() {
         <ButtonComponent />
 
         <MovieList/>
+
+        <AnimalList/>
 
       </main>
 
