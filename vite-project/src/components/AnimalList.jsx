@@ -16,7 +16,7 @@ function AnimalList() {
             img: bird
         },
         {
-            id: 1,
+            id: 3,
             name: "pig",
             img: pig
         }

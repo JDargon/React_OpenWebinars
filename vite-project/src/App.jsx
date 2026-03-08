@@ -1,18 +1,32 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import ButtonComponent from './components/ButtonComponent'
 import HeaderComponnet from './components/HeaderComponent'
 import Login from './components/Login';
 import MovieList from './components/MovieList';
 import AnimalList from './components/AnimalList';
+import MemeList from './components/MEmeList';
 
 function App() {
+
+  /*
+  useEffect(()=>{
+    console.log("Ejecución cada vez que se renderiza el componente raiz")
+  })
+  */
 
   const [number, setNumber] = useState(0);
   const [myValue, setMyValue] = useState("");
   const [greetings, setGreetings] = useState("BienVenidos a mi web!")
   const [user, setUser] = useState({})
   let myPlaceholder = "Escribe aquí"
+  const [showMovies, setShowMovies] = useState(true);
+
+  /*
+   useEffect(()=>{
+    console.log("Ejecución con cada cambio de la variable reactiva user")
+  }, [user])
+  */
 
   const links = {
     home: "Home",
@@ -35,7 +49,7 @@ function App() {
   }
 
   const login = (userInfo) => {
-    console.log(userInfo);
+    //console.log(userInfo);
     setUser(userInfo)
   }
 
@@ -56,9 +70,13 @@ function App() {
         <br />
         <ButtonComponent />
 
-        <MovieList/>
+        <button onClick={()=> setShowMovies(!showMovies)}>Toogle Movies</button>
+
+        {showMovies && <MovieList/>}
 
         <AnimalList/>
+
+        <MemeList/>
 
       </main>
 
